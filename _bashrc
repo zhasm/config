@@ -29,9 +29,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
+#case "$TERM" in
+#    xterm-color) color_prompt=yes;;
+#esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -81,6 +81,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias adt='ssh zhasm@ssh.alwaysdata.com'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -98,7 +99,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#for ime
+# ime
+
 export XMODIFIERS="@im=ibus" 
 export XIM=ibus 
 export XIM_ARGS="-d" 
@@ -108,23 +110,42 @@ export XIM_PROGRAM=/usr/bin/ibus-daemon
 export GTK_IM_MODULE=ibus 
 export QT_IM_MODULE=ibus 
 export SMB_CODESET=GB18030
-export PATH=$PATH:~/scripts 
-export DJANGO_SETTINGS_MODULE=test.settings
+#export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ " 
 export PS1="\[\e[36;1m\]\u\[\e[0m\]@\[\e[33;1m\]\h\[\e[0m\]:\[\e[31;1m\]\w\[\e[0m\]\n\$ "
+export PATH=$PATH:$HOME/script/:$HOME/local/bin
+
+export PYTHONPATH=$PYTHONPATH:$HOME/local/lib/python
 
 
-
-alias voa="vlc http://www.voanews.com/wm/live/musicmix.asx"
-alias adt="ssh zhasm@ssh.alwaysdata.com"
-alias gam="git commit -am"
-alias br="chromium-browser"
-alias ff='firefox'
-alias fx="openfetion"
-alias im="empathy"
-alias vmxp="vmplayer ~/vm/Windows\ XP\ Professional.vmx"
-alias vm="sudo /etc/init.d/vmware start"
+alias kelvin='ssh -L10240:prod-kelvin-db-slave-vip.vega.ironport.com:3306 rexzhang@tocteam.sfo.ironport.com'
+alias ff="firefox&"
+alias cr="chromium-browser --auto-ssl-client-auth&"
+alias tb="thunderbird&"
+alias pd="pidgin"
+alias cog='ssh rexzhang@cog-app1.soma.ironport.com' 
+alias rdp='rdesktop -u tocteam -p TicToc123 74.2.209.91&'
+alias vmxp="/bin/rm -rf ~/vm/cache/* && vmplayer ~/vm/Windows\ XP\ Professional.vmx&"
+alias 10240='python -m SimpleHTTPServer 10240&'
+#10.21.89.107:10240
+alias lan="sudo route add -net 10.120.90.0 netmask 255.255.255.0 gw 10.120.30.1"
+alias alert_helper='history|tail -n1|sed -e "s/^\s*[0-9]\+\s*//" -e "s/;\s*alert$//"' 
+alias alert='notify-send -i /usr/share/icons/gnome/32×32/apps/gnome-terminal.png "[$?] $(alert_helper)"'
+alias cf="rdesktop 10.120.30.152"
 alias cjb="ssh -D 1080 zhasm@shell.cjb.net"
-alias komodo="/home/rex/apps/komodo_edit/bin/komodo"
-alias ps="ps aux"
-alias myip="ifconfig |grep -P \"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\"" 
+alias install='sudo apt-get install'
+alias myip='ifconfig|grep "inet addr"'
+alias sfo='ssh -D 1080 rexzhang@bastion1.sfo.ironport.com'
+alias sfo2='ssh -D 1080 rexzhang@bastion2.sfo.ironport.com'
+alias rm='/home/rex/script/rm'
+alias ps='ps aux'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias sv="ifconfig |grep  -oP \"(?<=inet addr:)[0-9.]+\" | grep -v 127.0.0.1 | sed \"s/\$/:8000/\"  && python -m SimpleHTTPServer"
+alias hf="perl -i ../utils/hotfix"
+ing(){
+    file=/home/rex/git/effective-perl-2e/txt/status
+    cmd="perl -i -pe \"s# \\$ #\| rex reviewing#x if /$1/\" $file"
+    ` $cmd `
+}
+
