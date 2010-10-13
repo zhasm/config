@@ -110,7 +110,12 @@ export XIM_PROGRAM=/usr/bin/ibus-daemon
 export GTK_IM_MODULE=ibus 
 export QT_IM_MODULE=ibus 
 export SMB_CODESET=GB18030
+<<<<<<< HEAD
 #export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ " 
+=======
+export PATH=/home/rex/local/perl-5.12.2/bin/:$PATH:~/scripts 
+export DJANGO_SETTINGS_MODULE=test.settings
+>>>>>>> f01d991dcf46b6a8547f84368ed233e49100c172
 export PS1="\[\e[36;1m\]\u\[\e[0m\]@\[\e[33;1m\]\h\[\e[0m\]:\[\e[31;1m\]\w\[\e[0m\]\n\$ "
 export PATH=$PATH:$HOME/script/:$HOME/local/bin
 
