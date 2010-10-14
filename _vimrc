@@ -27,7 +27,7 @@ syntax on
 
 "解决backspace问题"
 set backspace=indent,eol,start
-colorscheme desert
+colorscheme zenburn
 "搜索问题
 set hlsearch
 set ignorecase 
