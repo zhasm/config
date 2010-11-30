@@ -1,0 +1,69 @@
+" Vim after-syntax file
+" Language: Spamassassin configuration file for IronPort CASE engine
+" Maintainer: Adam Katz <scripts@khopis.com>, <adkatz@ironport.com>
+" Website: http://khopis.com/scripts
+" Version: 3.2
+" Copyright: (c) IronPort 2010
+
+" This requires my publicly available spamassassin syntax highlighting from
+" http://www.vim.org/scripts/script.php?script_id=2617  and adds IronPort
+" items with this separate file so I can keep publishing the base file.
+"
+" To use, install the base syntax file and then place this after-syntax
+" file as ~/.vim/after/syntax/spamassassin.vim
+
+syn cluster saRule add=ipFuzzy,ipFastURI
+syn cluster saRuleNames add=ipFURIrule,ipFURIcRule
+syn cluster saTFlags add=ipTFlags,ipExTFlags
+
+" fuzzy is http://eng.ironport.com/docs/is/case-engine/defender/eng/func_spec/fuzzy_plugin.rst
+syn keyword ipFuzzy	fuzzy fuzzy_version  contained
+
+" suspect/certain: https://bugs.ironport.com/show_bug.cgi?id=37967
+syn keyword ipTFlags	suspect certain contained
+syn keyword ipTFlags	nobump nomultiscan nonmutable nosbnp contained
+syn keyword ipExTFlags	nophonehome limitphonehome contained
+
+
+" FastURI, http://eng.ironport.com/docs/is/case-engine/2.7.0/eng/fasturi_fs.rst
+syn keyword ipFastURI  fasturi_add contained nextgroup=ipFURIword skipwhite
+  syn match ipFURIword  "\w\+\>" contained nextgroup=ipFURIdomain skipwhite
+    syn match ipFURIdomain "\w[A-Za-z0-9_.\\-]\+\>" contained nextgroup=saBodyMatch skipwhite
+syn keyword ipFastURI  fasturi contained nextgroup=ipFURIrule skipwhite
+  syn match ipFURIrule  "\w\+\>" contained nextgroup=ipFURIloc skipwhite
+    syn match ipFURIloc "\w\+\>" contained contains=ipFURItypes,saErrWord nextgroup=ipFURIdomain skipwhite
+syn keyword ipFastURI  fasturi_check contained nextgroup=ipFURIcRule skipwhite
+  syn match ipFURIcRule  "\w\+\>" contained nextgroup=ipFURIword skipwhite
+    syn match ipFURIruleLoc "\w\+\>" contained contains=ipFURItypes,saErrWord nextgroup=ipFURIcheck skipwhite
+      syn match ipFURIcheck "\w\+\>" contained contains=ipFURIcheckDB nextgroup=ipFURIcheck skipwhite
+        syn match ipFURIcheckDB "db:" contained nextgroup=ipFURIcheck
+syn keyword ipFastURI fasturi_add_list contained nextgroup=ipFURIgroup skipwhite
+  syn match ipFURIgroup  "\w\+\>" contained nextgroup=ipFURIgDomain skipwhite
+    syn match ipFURIgDomain  "\w[A-Za-z0-9_.\\=]\+\>" contained nextgroup=ipFURIgDomain skipwhite
+
+syn keyword ipFURItypes  uri sender_ptr sender_helo relay_rdns relay_helo contained
+syn keyword ipFURItypes  dkim_neutral dkim_pass dkim_hardfail contained
+syn match   ipFURItypes  "\<spf_\%(helo\|pra\|mailfrom\|all\)_\%(pass\|neutral\|softfail\|fail\)\>" contained
+
+
+" Auto_Meta (cannot find spec) http://eng.ironport.com/docs/case/rules/tutorial/metatools.html
+syn match   ipAutoMeta	"^#\s*AUTO_META\s" containedin=saComment nextgroup=ipAMdata
+  syn match ipAMdata ".\+$" contained contains=ipAMkeyword,ipAMnum,saPredicate
+    syn keyword ipAMkeyword begin end rule threshold contained
+    syn keyword ipAMkeyword min_so min_hit_rate max_so max_hit_rate contained
+    syn keyword ipAMkeyword predicate subtract keep exclude contained
+    syn match   ipAMnum     "\s\zs\d\%(\.\d\+\)\?\>" contained
+
+
+hi def link ipFuzzy		saRule
+hi def link ipFastURI		saRule
+hi def link ipFURItypes	 	saHeaderRuleSpecials
+hi def link ipFURIcheckDB	saHeaderHeaderPre
+
+hi def link ipAutoMeta		saPreProc
+hi def link ipAMkeyword		saKeyword
+hi def link ipAMnum		saNumber
+
+hi def link ipTFlags		saTFlags
+hi def link ipExTFlags		Todo
+
