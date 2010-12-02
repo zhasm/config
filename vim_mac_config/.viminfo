@@ -17,9 +17,11 @@
 $
 
 # Command Line History (newest to oldest):
-:q
+:x
 :w
+:tabnew 
 :wq
+:q
 :13
 :15
 :w ~/Desktop/blog.html
@@ -35,8 +37,6 @@ $
 :help NERD_tre
 :helptags.
 :helptags
-:nt
-:set matchpairs=(:),{:},[:],<:>
 
 # Search String History (newest to oldest):
 ?/fanfox
@@ -68,16 +68,18 @@ $
 
 # Registers:
 "0	CHAR	0
-	。
-"1	CHAR	0
+	alias kbds="synergys --config ./.synergy.conf"
+"1	LINE	0
+	export GIT_PROXY_COMMAND="$HOME/proxy"
+"2	CHAR	0
 	    PS1=$PS1'\033[0;33m$(__git_ps1 " (%s)")\033[0m'
 	    export $PS1
 	
-"2	LINE	0
-	    PS1=echo $PS1|sed 's#\(\(.*unknown.*\)\)##'
 "3	LINE	0
+	    PS1=echo $PS1|sed 's#\(\(.*unknown.*\)\)##'
+"4	LINE	0
 		<link rel="stylesheet" href="fontcss?type=.css" type="text/css" media="screen" /> 
-"4	CHAR	0
+"5	CHAR	0
 					<option value="iYaHei.ttf" selected>微软雅黑</option>
 					<option value="#">微软正黑体</option>
 					<option value="fzqtj.ttf">方正启体简</option>
@@ -87,62 +89,10 @@ $
 					<option value="xujinglei.ttf">方正徐静蕾</option>				
 	                </select>
 	
-"5	LINE	0
-	
 "6	LINE	0
-	    <li></li>
+	
 "7	LINE	0
-	367
-<<p>500多天之后，饭否回来了。这是不是以前的那个饭否不要紧，重要的是你还是那个你。(via@王兴) 有人说：“饭否回来不被阉割就很好了。”要俺看被阉割也成啊，被阉割俺也愿意继续跟它，好歹曾经完整过，不像这个新浪围脖儿，还没出生时就是太监了。(via @女流氓.exe)</p>
-	
-	<p>总结了一款非官方的新手指南。老fanfouers请无视。</p>
-	
-	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">饭否官方求助页面</h3>
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	<li>http://fanfou.com/help</li> 
-	<li>http://help.fanfou.com/faq.html</li> 
-	</blockquote>
-	
-	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">注册新帐户</h3>
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	    <p>现在饭否采用了邀请制注册方式。可以使用下面的邀请码： </p> 
-	    <p>http://fanfou.com/register/cDzSYlKOY6MX （@.rex提供）</p> 
-	</blockquote>
-	
-	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">饭否登录</h3>
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	<li>电脑登录页面：</li> 
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	    <ul>
-	        <li>http://fanfou.com/index</li>
-	        <li>http://fanfou.com/home</li> 
-	        <li><span style="color:#ff008c">不要使用 http://fanfou.com/ ，这个页面暂时无法登录。</span> </li> 
-	    </ul>
-	</blockquote>
-	<li>手机登录</li>
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	    <ul>
-	        <li>请访问http://m.fanfou.com/home</li>
-	        <li>据@Key4ever 说，Operamini看饭否，排版很工整，是UC不能比的。</li>
-	        
-	    </ul>
-	</blockquote>
-	<li>结合 @穆荣均 所说，可以使用下面的登录名：</li>
-	        <blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	            <ul>
-	                <li>自己的短网址（即个性域名，例如 http://fanfou.com/zhasm ，就使用 zhasm 来登录）；</li> 
-	                <li>自己的邮箱</li> 
-	                <li>之前登记过的手机号</li> 
-	            </ul>
-	        </blockquote> 
-	</blockquote>
-	
-	
-	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">上传图片</h3>
-	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	    <li>电脑上传</li>
-	    <blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
-	        <ul>
+	    <li></li>
 "8	LINE	0
 	367
 <<p>500多天之后，饭否回来了。这是不是以前的那个饭否不要紧，重要的是你还是那个你。(via@王兴) 有人说：“饭否回来不被阉割就很好了。”要俺看被阉割也成啊，被阉割俺也愿意继续跟它，好歹曾经完整过，不像这个新浪围脖儿，还没出生时就是太监了。(via @女流氓.exe)</p>
@@ -195,31 +145,83 @@ $
 	    <li>电脑上传</li>
 	    <blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
 	        <ul>
-"9	CHAR	0
+"9	LINE	0
+	367
+<<p>500多天之后，饭否回来了。这是不是以前的那个饭否不要紧，重要的是你还是那个你。(via@王兴) 有人说：“饭否回来不被阉割就很好了。”要俺看被阉割也成啊，被阉割俺也愿意继续跟它，好歹曾经完整过，不像这个新浪围脖儿，还没出生时就是太监了。(via @女流氓.exe)</p>
+	
+	<p>总结了一款非官方的新手指南。老fanfouers请无视。</p>
+	
+	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">饭否官方求助页面</h3>
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	<li>http://fanfou.com/help</li> 
+	<li>http://help.fanfou.com/faq.html</li> 
+	</blockquote>
+	
+	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">注册新帐户</h3>
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	    <p>现在饭否采用了邀请制注册方式。可以使用下面的邀请码： </p> 
+	    <p>http://fanfou.com/register/cDzSYlKOY6MX （@.rex提供）</p> 
+	</blockquote>
+	
+	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">饭否登录</h3>
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	<li>电脑登录页面：</li> 
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	    <ul>
+	        <li>http://fanfou.com/index</li>
+	        <li>http://fanfou.com/home</li> 
+	        <li><span style="color:#ff008c">不要使用 http://fanfou.com/ ，这个页面暂时无法登录。</span> </li> 
+	    </ul>
+	</blockquote>
+	<li>手机登录</li>
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	    <ul>
+	        <li>请访问http://m.fanfou.com/home</li>
+	        <li>据@Key4ever 说，Operamini看饭否，排版很工整，是UC不能比的。</li>
+	        
+	    </ul>
+	</blockquote>
+	<li>结合 @穆荣均 所说，可以使用下面的登录名：</li>
+	        <blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	            <ul>
+	                <li>自己的短网址（即个性域名，例如 http://fanfou.com/zhasm ，就使用 zhasm 来登录）；</li> 
+	                <li>自己的邮箱</li> 
+	                <li>之前登记过的手机号</li> 
+	            </ul>
+	        </blockquote> 
+	</blockquote>
 	
 	
-	
+	<h3 style="color: #127ADB; font-size:14px; padding-bottom:3px; padding-top:3px; margin:1.5em 0 1em;">上传图片</h3>
+	<blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	    <li>电脑上传</li>
+	    <blockquote style="border-left:2px solid #DDDDDD; margin:15px 30px 0 10px; padding-left:20px;">
+	        <ul>
 ""-	CHAR	0
-	原作者是饭友@。
+	ynergys 
 
 # File marks:
-'0  1  0  ~/script/a.p
-'1  1  0  ~/script/a.py
-'2  3  0  ~/Desktop/friends.py
-'3  1  0  ~/Desktop/x.html
-'4  261  72  ~/.vim/snippets/html.snippets
-'5  134  175  ~/.bashrc
-'6  132  0  ~/.bashrc
-'7  132  14  ~/.bashrc
-'8  132  0  ~/.bashrc
-'9  1  4  ~/tmp/test/.git/COMMIT_EDITMSG
+'0  166  37  ~/.bashrc
+'1  165  20  ~/.bashrc
+'2  1  0  ~/Desktop/x.html
+'3  11  0  ~/Documents/ProGit.html
+'4  2  40  ~/script/rmff
+'5  261  72  ~/.vim/snippets/html.snippets
+'6  134  175  ~/.bashrc
+'7  132  0  ~/.bashrc
+'8  132  14  ~/.bashrc
+'9  132  0  ~/.bashrc
 
 # Jumplist (newest first):
--'  1  0  ~/script/a.p
--'  1  0  ~/script/a.py
--'  3  0  ~/Desktop/friends.py
--'  1  0  ~/Desktop/friends.py
+-'  166  37  ~/.bashrc
+-'  1  0  ~/.bashrc
+-'  165  20  ~/.bashrc
 -'  1  0  ~/Desktop/x.html
+-'  11  0  ~/Documents/ProGit.html
+-'  1  0  ~/Documents/ProGit.html
+-'  1  0  ~/Desktop/MacVim-7_3-53/mvim
+-'  2  40  ~/script/rmff
+-'  1  0  ~/script/rmff
 -'  103  12  ~/Desktop/x.html
 -'  112  13  ~/Desktop/x.html
 -'  100  447  ~/Desktop/x.html
@@ -233,7 +235,6 @@ $
 -'  77  79  ~/.bashrc
 -'  59  39  ~/.bashrc
 -'  37  37  ~/.bashrc
--'  1  0  ~/.bashrc
 -'  132  0  ~/.bashrc
 -'  129  7  ~/.bashrc
 -'  62  64  ~/.bashrc
@@ -241,7 +242,6 @@ $
 -'  53  4  ~/.bashrc
 -'  6  7  ~/.bashrc
 -'  164  0  ~/.bashrc
--'  165  0  ~/.bashrc
 -'  1  4  ~/tmp/test/.git/COMMIT_EDITMSG
 -'  1  35  ~/git/iFanAvatar/.gitignore
 -'  2  0  ~/git/iFanAvatar/.gitignore
@@ -310,65 +310,13 @@ $
 -'  100  0  ~/Desktop/blog.html
 -'  69  1  ~/git/iFanAvatar/media/styles/screen.css
 -'  1  0  ~/git/iFanAvatar/media/styles/screen.css
--'  68  0  ~/git/x/templates/index.html
--'  1  0  ~/git/x/templates/index.html
--'  10  6  ~/script/a.py
 
 # History of marks within files (newest to oldest):
 
-> ~/script/a.p
-	"	1	0
-
-> ~/script/a.py
-	"	1	0
-	^	10	7
-	.	10	6
-	+	9	3
-	+	11	0
-	+	10	6
-
-> ~/Desktop/friends.py
-	"	3	0
-
-> ~/script/rmff
-	"	2	40
-	^	2	41
-	.	2	40
-	+	2	40
-
-> ~/Desktop/x.html
-	"	1	0
-	^	100	545
-	.	101	0
-	+	100	388
-	+	100	258
-	+	100	391
-	+	100	388
-	+	101	0
-	+	100	439
-	+	100	546
-	+	100	545
-	+	100	546
-	+	101	0
-
-> ~/.vim/snippets/html.snippets
-	"	261	72
-	^	261	73
-	.	261	72
-	+	258	3
-	+	258	0
-	+	263	0
-	+	258	10
-	+	259	21
-	+	261	72
-
 > ~/.bashrc
-	"	134	175
-	.	133	0
-	+	158	80
-	+	158	166
-	+	158	75
-	+	158	64
+	"	166	37
+	^	166	38
+	.	166	37
 	+	158	60
 	+	164	0
 	+	76	0
@@ -457,7 +405,7 @@ $
 	+	162	66
 	+	163	38
 	+	164	37
-	+	165	55
+	+	164	55
 	+	133	0
 	+	132	0
 	+	132	7
@@ -465,6 +413,222 @@ $
 	+	132	14
 	+	132	0
 	+	133	0
+	+	165	21
+	+	166	0
+	+	164	0
+	+	166	37
+
+> ~/Documents/ProGit.html
+	"	30	25
+
+> ~/Desktop/x.html
+	"	1	0
+	^	100	449
+	.	100	446
+	+	144	388
+	+	144	258
+	+	144	391
+	+	144	388
+	+	144	0
+	+	144	439
+	+	144	546
+	+	144	545
+	+	144	546
+	+	144	0
+	+	1	0
+	+	100	446
+
+> ~/Desktop/MacVim-7_3-53/mvim
+	"	1	0
+
+> ~/.vim/after/syntax/download_script.php?src_id=8846
+	"	1	0
+
+> /private/etc/hosts
+	"	38	20
+	^	38	21
+	.	38	20
+	+	11	25
+	+	11	29
+	+	11	26
+	+	11	0
+	+	11	30
+	+	11	0
+	+	42	27
+	+	564	27
+	+	672	27
+	+	762	27
+	+	768	0
+	+	15	34
+	+	13	0
+	+	11	7
+	+	17	6
+	+	18	25
+	+	18	15
+	+	19	24
+	+	18	0
+	+	22	15
+	+	23	16
+	+	26	28
+	+	27	15
+	+	28	2
+	+	28	10
+	+	28	29
+	+	29	29
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	32	18
+	+	35	21
+	+	37	19
+	+	37	18
+	+	40	0
+	+	38	29
+	+	39	0
+	+	38	20
+
+> ~/zf
+	"	12	0
+	^	17	0
+	.	13	0
+	+	1	0
+	+	2	0
+	+	20	19
+	+	21	34
+	+	19	17
+	+	21	32
+	+	23	20
+	+	21	13
+	+	21	0
+	+	23	18
+	+	28	40
+	+	40	3
+	+	60	10
+	+	9	10
+	+	30	0
+	+	31	0
+	+	40	0
+	+	60	14
+	+	28	45
+	+	60	11
+	+	28	39
+	+	60	0
+	+	47	13
+	+	60	6
+	+	43	3
+	+	47	36
+	+	43	0
+	+	47	39
+	+	43	12
+	+	44	28
+	+	44	29
+	+	47	8
+	+	44	27
+	+	43	28
+	+	60	0
+	+	60	0
+	+	60	17
+	+	60	0
+	+	59	25
+	+	53	25
+	+	53	54
+	+	53	53
+	+	59	22
+	+	53	31
+	+	54	22
+	+	55	27
+	+	58	14
+	+	59	39
+	+	34	0
+	+	43	3
+	+	40	3
+	+	43	15
+	+	43	0
+	+	40	0
+	+	40	3
+	+	40	0
+	+	43	23
+	+	40	0
+	+	43	0
+	+	40	0
+	+	43	7
+	+	43	6
+	+	43	7
+	+	43	0
+	+	45	10
+	+	52	0
+	+	52	0
+	+	46	3
+	+	47	0
+	+	50	21
+	+	51	9
+	+	49	10
+	+	47	22
+	+	28	27
+	+	42	13
+	+	43	0
+	+	41	0
+	+	39	0
+	+	59	36
+	+	18	0
+	+	10	9
+	+	11	0
+	+	12	0
+	+	13	0
+
+> ~/ddq
+	"	160	55597
+	.	1	0
+	+	1	0
+
+> ~/x.json
+	"	1	0
+	^	1	24333
+	.	1	0
+	+	1	0
+
+> ~/xx
+	"	1	0
+	.	3220	0
+	+	3220	0
+
+> ~/script/a.py
+	"	12	0
+	^	13	18
+	.	13	17
+	+	10	3
+	+	15	0
+	+	15	0
+	+	9	0
+	+	11	1
+	+	15	0
+	+	14	12
+	+	12	27
+	+	13	17
+
+> ~/script/a.p
+	"	1	0
+
+> ~/Desktop/friends.py
+	"	3	0
+
+> ~/script/rmff
+	"	2	40
+	^	2	41
+	.	2	40
+	+	2	40
+
+> ~/.vim/snippets/html.snippets
+	"	261	72
+	^	261	73
+	.	261	72
+	+	258	3
+	+	258	0
+	+	263	0
+	+	258	10
+	+	259	21
+	+	261	72
 
 > ~/tmp/test/.git/COMMIT_EDITMSG
 	"	1	4
@@ -642,44 +806,6 @@ $
 
 > ~/git/iFanAvatar/media/scripts/main.js
 	"	94	0
-
-> /private/etc/hosts
-	"	35	21
-	^	35	22
-	.	35	21
-	+	11	25
-	+	11	29
-	+	11	26
-	+	11	0
-	+	11	30
-	+	11	0
-	+	38	27
-	+	560	27
-	+	668	27
-	+	758	27
-	+	764	0
-	+	15	34
-	+	13	0
-	+	11	7
-	+	17	6
-	+	18	25
-	+	18	15
-	+	19	24
-	+	18	0
-	+	22	15
-	+	23	16
-	+	26	28
-	+	27	15
-	+	28	2
-	+	28	10
-	+	28	29
-	+	29	29
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	32	18
-	+	35	21
 
 > ~/Library/Application Support/OpenVanilla/UserData/OVIMGeneric/zhengma.cin
 	"	67	5
@@ -1370,31 +1496,3 @@ $
 	+	8	22
 	+	10	25
 	+	13	7
-
-> ~/Desktop/.bashrc
-	"	1	0
-
-> ~/tmp/02424_skypainting_1680x1050.jpg
-	"	1	0
-
-> ~/Documents/荒唐传说.txt
-	"	34	0
-
-> ~/Documents/在妓院里出生的男人.txt
-	"	454	0
-
-> ~/Library/Caches/com.binarynights.ForkLift2/3/a.py
-	"	12	6
-	^	12	7
-	.	12	6
-	+	12	6
-
-> ~/atw101117b.wma
-	"	1	0
-
-> ~/tmp/a.py
-	"	11	15
-	^	11	16
-	.	11	15
-	+	12	0
-	+	11	15
