@@ -44,3 +44,8 @@ autocmd BufEnter * lcd %:p:h
 
 "line space
 set linespace=2
+
+"open nerd tree by F5
+map <F5> :NERDTreeToggle<CR>
+imap <F5> <ESC>:NERDTreeToggle<CR>
+
