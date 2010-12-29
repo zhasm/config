@@ -28,7 +28,7 @@ set backspace=indent,eol,start
 colorscheme zenburn
 "搜索问题
 set hlsearch
-set ignorecase 
+set ignorecase
 set incsearch
 
 "Markdown language syntax settings
@@ -36,7 +36,7 @@ augroup mkd
 autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
-"auto new line 
+"auto new line
 "set textwidth=80
 
 "set current working directory globally
@@ -48,4 +48,12 @@ set linespace=2
 "open nerd tree by F5
 map <F5> :NERDTreeToggle<CR>
 imap <F5> <ESC>:NERDTreeToggle<CR>
+
+"auto remove ending spaces
+function RemoveEndingWhiteSpace()
+    if search("[ \t]$")
+        %s/[ \t]\+$//
+    endif
+endfunction
+au! BufWrite * exec RemoveEndingWhiteSpace()
 
