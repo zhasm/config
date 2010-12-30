@@ -50,10 +50,12 @@ map <F5> :NERDTreeToggle<CR>
 imap <F5> <ESC>:NERDTreeToggle<CR>
 
 "auto remove ending spaces
-function RemoveEndingWhiteSpace()
-    if search("[ \t]$")
-        %s/[ \t]\+$//
-    endif
-endfunction
-au! BufWrite * exec RemoveEndingWhiteSpace()
+function! RemoveEndingWhiteSpace()
+    :if search("[ \t]$")
+    :    %s/[ \t]\+$//
+    :endif
+endfunction    
+au! FileWritePre * ks|RemoveEndingWhiteSpace()|'s
 
+"auto load .vimrc after refresh
+autocmd BufWritePost ~/.vimrc   so ~/.vimrc
